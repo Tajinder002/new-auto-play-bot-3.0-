@@ -1,30 +1,38 @@
-name: Build
+
+name: Build AutoPlay AI
 
 on:
   push:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up Java 21
-        uses: actions/setup-java@v4
+      - name: Checkout source
+        uses: actions/checkout@v5
+
+      - name: Set up Java 25
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: '21'
+          java-version: '25'
+
       - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '9.7.1'
-      - name: Build mod
+        uses: gradle/actions/setup-gradle@v5
+
+      - name: Build Fabric mod
         run: gradle build --no-daemon
-      - name: Upload build artifacts
+
+      - name: Upload build results
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: autoplay-build
+          name: AutoPlay-AI-JAR
           path: build/libs/*.jar
+          if-no-files-found: error
