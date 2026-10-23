@@ -1,0 +1,9 @@
+{
+  "key.category.autoplay.main": "AutoPlay AI",
+  "key.autoplay.toggle": "Toggle AutoPlay",
+  "key.autoplay.training": "Toggle Training Mode",
+  "key.autoplay.stats": "Show AutoPlay Stats",
+  "key.autoplay.config": "Cycle AutoPlay Preset",
+  "key.autoplay.emergency": "Emergency Stop",
+  "key.autoplay.gui": "AutoPlay Controls"
+}

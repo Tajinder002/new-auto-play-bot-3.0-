@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "autoplay",
+  "version": "${version}",
+  "name": "AutoPlay AI",
+  "description": "Experimental client-side PvP practice, observation, and training prototype.",
+  "authors": ["AutoPlay AI contributors"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.autoplay.AutoPlayClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
